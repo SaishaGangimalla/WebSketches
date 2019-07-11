@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+    const list = document.querySelector('.output ul');
+    list.innerHTML = '';
+
+    let names = [ 'SaiSha gangiMalla', 'sAish g', 'saIsha G','saiSH gangiMalla'];
+    
+    for (let i=0; i<names.length ; i++){
+      let inputs = names[i];
+        let nameLowerCase = inputs.toLowerCase();
+        let firstAlphabet = nameLowerCase.slice(0,1);
+        console.log(firstAlphabet);
+        let firstAlphabetCaps = firstAlphabet.toUpperCase();
+        let lastNameIndex = nameLowerCase.indexOf(' ');
+        console.log(lastNameIndex);
+        let lastNameAlphabet = nameLowerCase.slice(lastNameIndex+1,lastNameIndex+2);
+        let lastNameAlphabetCaps = lastNameAlphabet.toUpperCase();
+        let FinalfirstName = nameLowerCase.replace(firstAlphabet,firstAlphabetCaps);
+        let finalName = FinalfirstName.replace(lastNameAlphabet,lastNameAlphabetCaps);
+      
+      let result = finalName; 
+
+      let listItem = document.createElement('li');
+      listItem.textContent = result;
+      list.appendChild(listItem);
+
+    }
+
+
+
+
+  });
+  </script>
+</head>
+<body>
+  <div class="output">
+
+    <ul></ul>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test Product Billings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+    const list = document.querySelector('.output ul');
+    const textBody = document.querySelector('.output p');
+    list.innerHTML='';
+    textBody.innerHTML='';
+    let total = 0;
+
+    let products = ['Underpants:6.99','Socks:5.99','T-shirt:14.99','Trousers:31.99','Shoes:23.99'];
+
+    for (let i=0; i< products.length ; i++){
+
+      let subArray = products[i].split(':');
+      console.log(subArray);
+      let productName = subArray[0];
+      console.log(productName);
+      let productPrice = Number(subArray[1]);
+      console.log(productPrice);
+      total +=productPrice;
+
+      let result = total;
+      let listItem  = document.createElement('li');
+      listItem.textContent = productName+' - $'+ productPrice;
+      list.appendChild(listItem);
+    }
+      textBody.textContent = "Total $"+total.toFixed(2);
+      
+
+  });
+  </script>
+</head>
+<body>
+  <div class="output">
+<ul>
+</ul>
+<p></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+const list = document.querySelector('.output ul');
+const totalBox = document.querySelector('.output p');
+var total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
+let myString=  'Underpants:6.99,Socks:5.99,T-shirt:14.99,Trousers:31.99,Shoes:23.99';
+let products = myString.split(',');
+
+for (var i = 0; i < products.length; i++) { 
+  let inputs = products[i];
+  let indexOfSemiColn = inputs.indexOf(':');
+  let productName = inputs.slice(0,indexOfSemiColn);
+  let productPrice =Number(inputs.slice(indexOfSemiColn+1, inputs.length));
+  console.log(productName);
+  console.log(productPrice);
+  total += productPrice;
+ console.log(total);
+  itemText = productName+' - $'+productPrice;
+  
+  var listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
+}
+totalBox.textContent = 'Total: $' + total.toFixed(2); 
+  });
+  </script>
+</head>
+<body>
+<div class='output'><p>
+
+</p>
+<ul></ul>
+</div>
+</body>
+</html>

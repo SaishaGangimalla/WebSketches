@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+
+  const greetings =document.querySelector('.greetings ul li');
+  for(let i=0; i < greetings.length ; i++){
+    let greetingsList = greetings[i].innerHTML;
+ 
+  
+  console.log(greetingsList);
+  console.log(greetingsList.length);
+  const button = document.querySelector('button');
+  button.addEventListener('click',christmasGreetings);
+  function christmasGreetings(){
+    console.log("testing");
+    for (let i = 0; i < greetingsList.length; i++) {
+  let input = greetingsList[i];
+  if (greetingsList[i].indexOf('Christmas') !== -1) {
+    let result = input;
+    let listItem = document.createElement('li');
+    listItem.textContent = result;
+    list.appendChild(listItem);
+  }
+}
+ }
+  }
+  });
+  </script>
+</head>
+<body>
+  <div class="greetings">
+    <ul> 
+      <li>Happy Birthday! </li>
+       <li> Merry Christmas my love </li>
+       <li> A happy Christmas to all the family </li>
+        <li>You're all I want for Christmas</li>
+        <li>Get well soon</li>
+        </ul>
+  </div>
+  <button>Christmas Greetings</button>
+</body>
+</html>

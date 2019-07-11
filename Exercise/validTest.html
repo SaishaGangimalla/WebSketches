@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+  document.addEventListener("DOMContentLoaded",function(){
+  const list = document.querySelector(".output ul");
+  list.innerHTML = '';
+  let stations = ['ssAaaaa', 'sdsdsdsdsSSS', 'sasdAAA','Addds'];
+for (let i=0; i< stations.length ; i++){
+ 
+let input = stations[i];
+let lowerStations = input.toLowerCase();
+let firstLetter = lowerStations.slice(0,1);
+let firstCaps = firstLetter.toUpperCase();
+let newStations = lowerStations.replace(firstLetter,firstCaps);
+let result = newStations;
+let listItem = document.createElement("li");
+listItem.textContent =result;
+list.appendChild(listItem);
+}
+
+  });
+</script>
+</head>
+<body>
+  <div class="output">
+<ul></ul>
+
+  </div>
+
+</body>
+</html>

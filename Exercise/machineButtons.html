@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Machine Buttons
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script >
+   document.addEventListener("DOMContentLoaded",function(){
+   
+   const button = document.querySelector('button');
+   const txt = document.querySelector('p');
+   console.log(button.textContent);
+button.addEventListener('click', machineButtons);
+
+function machineButtons(){
+
+if(button.textContent==='Start Machine'){
+  
+  button.textContent = 'Stop Machine';
+  txt.textContent = 'Machine has been started';
+}
+else if (button.textContent==='Stop Machine')
+{
+ button.textContent = 'Start Machine';
+txt.textContent = 'The machine has been stopped';
+}
+}
+   }); 
+  </script>
+</head>
+<body>
+  
+<button>Start Machine</button>
+
+<p> The machine has been stopped.</p>
+</body>
+</html>
